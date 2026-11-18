@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Student Marketplace";
+}
+
+<main class="py-4 py-lg-5">
+    <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+            <div class="d-inline-flex align-items-center gap-2 mb-4">
+                <span class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-3 fw-bold"
+                      style="width: 3rem; height: 3rem;">CL</span>
+                <span class="fs-4 fw-bold text-primary">CampusLoop</span>
+            </main>
+
+            <p class="text-uppercase text-primary fw-semibold small mb-2">Your campus marketplace</p>
+            <h1 class="display-3 fw-bold lh-1 mb-4">Buy and sell smarter at school.</h1>
+            <p class="lead text-secondary mb-4">
+                Find affordable textbooks from students on your campus,
+                or pass along the items you no longer need.
+            </p>
+
+            <div class="d-flex flex-wrap gap-3">
+                <a asp-controller="User" asp-action="Register" class="btn btn-primary btn-lg px-4">
+                    Create an account
+                </a>
+                <a asp-controller="User" asp-action="Login" class="btn btn-outline-primary btn-lg px-4">
+                    Log in
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-5">
+            <div class="bg-primary-subtle rounded-4 p-4 p-md-5 shadow-sm">
+                <div class="bg-white rounded-4 p-4 shadow-sm">
+                    <div class="d-flex justify-content-between align-items-start mb-4">
+                        <div>
+                            <p class="text-secondary small mb-1">Made for students</p>
+                            <h2 class="h4 fw-bold mb-0">Keep it in the loop.</h2>
+                        </div>
+                        <span class="fs-1" aria-hidden="true">📚</span>
+                    </div>
+                    <div class="border-top pt-3">
+                        <p class="mb-2 fw-semibold">One simple place to:</p>
+                        <ul class="list-unstyled text-secondary mb-0">
+                            <li class="mb-2">✓ Discover affordable course materials</li>
+                            <li class="mb-2">✓ Sell books you no longer need</li>
+                            <li>✓ Connect with students on campus</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
