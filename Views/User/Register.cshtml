@@ -1,0 +1,73 @@
+@model CampusLoop.Models.User
+@{
+    ViewData["Title"] = "Create an account";
+}
+
+<main class="py-4 py-lg-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card border-0 shadow-sm rounded-4">
+                <div class="card-body p-4 p-md-5">
+                    <div class="text-center mb-4">
+                        <span class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-3 fw-bold mb-3"
+                              style="width: 3.25rem; height: 3.25rem;">CL</span>
+                        <h1 class="h2 fw-bold mb-2">Join CampusLoop</h1>
+                        <p class="text-secondary mb-0">Create the account that matches how you use CampusLoop.</p>
+                    </div>
+
+                    <div id="error" class="alert alert-danger d-none" role="alert"></div>
+                    <div id="success" class="alert alert-success d-none" role="alert"></div>
+
+                    <form id="register-form">
+                        <div class="mb-3">
+                            <label asp-for="FullName" class="form-label fw-semibold"></label>
+                            <input asp-for="FullName" class="form-control form-control-lg" autocomplete="name" />
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label fw-semibold"></label>
+                            <input asp-for="Email" type="email" class="form-control form-control-lg" autocomplete="email" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Password" class="form-label fw-semibold"></label>
+                            <input asp-for="Password" class="form-control form-control-lg" autocomplete="new-password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="ConfirmPassword" class="form-label fw-semibold">Confirm password</label>
+                            <input id="ConfirmPassword" name="ConfirmPassword" type="password"
+                                   class="form-control form-control-lg" autocomplete="new-password" required />
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Role" class="form-label fw-semibold">Account type</label>
+                            <select asp-for="Role" class="form-select form-select-lg">
+                                <option value="">Choose Buyer or Seller</option>
+                                <option value="Buyer">Buyer</option>
+                                <option value="Seller">Seller</option>
+                            </select>
+                            <span asp-validation-for="Role" class="text-danger"></span>
+                            <div class="form-text">This choice is fixed after registration.</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100">Create account</button>
+                    </form>
+
+                    <p class="text-center text-secondary mt-4 mb-0">
+                        Already have an account?
+                        <a asp-controller="User" asp-action="Login" class="fw-semibold text-decoration-none">Log in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script type="module" src="~/js/Register.js" asp-append-version="true"></script>
+}
